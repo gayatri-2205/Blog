@@ -65,8 +65,11 @@ app.get("/posts/:postName",function(req,res){
 
 });
 
-
-
-app.listen(process.env.PORT || 8000, function() {
-  console.log("Server started on port 3000");
+const server = app.listen(process.env.PORT || 5000, () => {
+  const port = server.address().port;
+  console.log(`Express is working on port ${port}`);
 });
+
+// app.listen(process.env.PORT || 8000, function() {
+//   console.log("Server started on port 3000");
+// });
